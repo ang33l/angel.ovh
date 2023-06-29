@@ -2,9 +2,9 @@ import Wrapper from "../boxes/wrapper";
 import { GoLinkExternal } from "react-icons/go";
 import { MdOutlineHideImage } from "react-icons/md";
 
-export default function Projects() {
+export default function Projects({ reference }) {
   return (
-    <Wrapper id="projects" bg={true}>
+    <Wrapper ref={reference} id="projects" bg={true}>
       <div className={"px-5 py-10"}>
         <h2 className={"text-3xl pb-10"}>Projects I have implemented</h2>
         <div className={"flex flex-col items-center justify-center "}>
@@ -95,9 +95,32 @@ export default function Projects() {
                   This portfolio website (React.js + Tailwind.css)
                 </h3>
                 <p className="text-lg text-justify">
-                  Flutter app created for notification system for high school
-                  (ANS - Akademia Nauk Stosowanych w Nowym Sączu) with use of
-                  Firebase system.
+                  My portfolio website created with react.js and tailwind.css
+                  after hours.
+                </p>
+              </div>
+              <GoLinkExternal className="flex-1 self-center" />
+            </a>
+            <a
+              href="https://exegir.pl"
+              target="_blank"
+              className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
+            >
+              <div className="flex-[4_4_0%]">
+                <img
+                  className="object-cover"
+                  src="/exegir.jpg"
+                  alt="manssanger image"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex-[12_12_0%]">
+                <h3 className="text-2xl underline">
+                  Website for general construction company
+                </h3>
+                <p className="text-lg text-justify">
+                  Website created in plain HTML + CSS as a basic showcase for
+                  general construction company.
                 </p>
               </div>
               <GoLinkExternal className="flex-1 self-center" />

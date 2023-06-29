@@ -6,11 +6,12 @@ import { GrCloudComputer } from "react-icons/gr";
 import { BiSwim, BiLogoFlutter } from "react-icons/bi";
 import Wrapper from "../boxes/wrapper";
 
-export default function About() {
+export default function About({ reference }) {
   return (
-    <Wrapper bg={true} id="about">
+    <Wrapper ref={reference} bg={true} id="about">
       <div className={"px-5 py-10"}>
         <h2 className={"text-3xl pb-10"}>Few words about me...</h2>
+
         <div className={"flex gap-10 justify-between text-center"}>
           <div className={"flex-1"}>
             <h3 className={"text-2xl border-b-2 border-primary pb-2"}>
