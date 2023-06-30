@@ -2,9 +2,9 @@ import Wrapper from "../boxes/wrapper";
 import { GoLinkExternal } from "react-icons/go";
 import { MdOutlineHideImage } from "react-icons/md";
 
-export default function Projects({ reference }) {
+export default function Projects() {
   return (
-    <Wrapper ref={reference} id="projects" bg={true}>
+    <Wrapper id="projects" bg={true}>
       <div className={"px-5 py-10"}>
         <h2 className={"text-3xl pb-10"}>Projects I have implemented</h2>
         <div className={"flex flex-col items-center justify-center "}>

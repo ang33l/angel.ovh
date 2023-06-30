@@ -6,7 +6,7 @@ export default function Footer() {
     <Wrapper bg={true}>
       <div className={"px-5 py-10 flex"}>
         <div className="flex flex-col flex-1">
-          <h4 className={"text-2xl"}>
+          <h4 className={"text-2xl font-semibold"}>
             Aleksander Marek /{" "}
             <span className={"text-primary"}>web developer</span>
           </h4>
@@ -15,7 +15,7 @@ export default function Footer() {
           <p>Feel free to use this template for yourself 😉</p>
         </div>
         <div className="flex-1">
-          <h4 className={"text-2xl"}>Navigation</h4>
+          <h4 className={"text-2xl font-semibold"}>Navigation</h4>
           <ul>
             <li>
               <Link to="hero" smooth={true} className={"text-xl underline"}>
@@ -45,7 +45,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="flex-1">
-          <h4 className={"text-2xl"}>Links</h4>
+          <h4 className={"text-2xl font-semibold"}>Links</h4>
           <ul>
             <li>
               <a

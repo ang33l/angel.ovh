@@ -5,6 +5,7 @@ const Wrapper = forwardRef(function (props, ref) {
     <div
       ref={ref}
       id={id}
+      data-section={id}
       className={`w-full ${bg ? "bg-text text-background" : ""} ${className}`}
       style={style}
     >

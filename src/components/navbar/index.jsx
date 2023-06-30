@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Navbar() {
-  //https://mantine.dev/hooks/use-intersection/
   //nav transparency
   const [val, setVal] = useState(0);
   const [padding, setPadding] = useState(20);
@@ -28,6 +27,43 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  //active link
+  const [activeSection, setActiveSection] = useState("hero");
+  const sections = useRef([]);
+
+  const handleActiveLink = () => {
+    const pageYOffset = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+
+    let newActiveSection = null;
+
+    sections.current.forEach((section) => {
+      const sectionOffsetTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionOffsetBottom = sectionOffsetTop + sectionHeight;
+
+      if (
+        (pageYOffset >= sectionOffsetTop &&
+          pageYOffset < sectionOffsetBottom) ||
+        (sectionOffsetTop >= pageYOffset &&
+          sectionOffsetBottom <= pageYOffset + windowHeight)
+      ) {
+        newActiveSection = section.id;
+      }
+    });
+
+    setActiveSection(newActiveSection);
+  };
+
+  useEffect(() => {
+    sections.current = document.querySelectorAll("[data-section]");
+    window.addEventListener("scroll", handleActiveLink);
+
+    return () => {
+      window.removeEventListener("scroll", handleActiveLink);
+    };
+  }, []);
   return (
     <Wrapper
       className={`z-10 fixed`}
@@ -49,20 +85,46 @@ export default function Navbar() {
             <Link
               to="hero"
               smooth={true}
-              className={"text-primary font-semibold"}
+              className={
+                activeSection === "hero" ? "text-primary font-semibold" : ""
+              }
             >
               Home
             </Link>
-            <Link to="about" smooth={true}>
+            <Link
+              to="about"
+              smooth={true}
+              className={
+                activeSection === "about" ? "text-primary font-semibold" : ""
+              }
+            >
               About me
             </Link>
-            <Link to="exp" smooth={true}>
+            <Link
+              to="exp"
+              smooth={true}
+              className={
+                activeSection === "exp" ? "text-primary font-semibold" : ""
+              }
+            >
               Experience
             </Link>
-            <Link to="projects" smooth={true}>
+            <Link
+              to="projects"
+              smooth={true}
+              className={
+                activeSection === "projects" ? "text-primary font-semibold" : ""
+              }
+            >
               Projects
             </Link>
-            <Link to="contact" smooth={true}>
+            <Link
+              to="contact"
+              smooth={true}
+              className={
+                activeSection === "contact" ? "text-primary font-semibold" : ""
+              }
+            >
               Contact
             </Link>
           </div>

@@ -1,8 +1,8 @@
 import Wrapper from "../boxes/wrapper";
 
-export default function Exp({ reference }) {
+export default function Exp() {
   return (
-    <Wrapper ref={reference} id={"exp"}>
+    <Wrapper id={"exp"}>
       <div className={"px-5 py-10"}>
         <h2 className={"text-3xl pb-10"}>My experience</h2>
         <div className={"flex flex-col items-center justify-center "}>
