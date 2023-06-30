@@ -14,6 +14,7 @@ export default function Exp() {
                 <a
                   href={"https://weblance.pl"}
                   target="_blank"
+                  rel="noreferrer"
                   className={"flex items-center gap-2 text-2xl"}
                 >
                   <img
@@ -23,7 +24,7 @@ export default function Exp() {
                   />
                   Weblance
                 </a>
-                <div className={"text-lg"}>05.2023 – still working</div>
+                <div className={"text-lg"}>05.2023 &ndash; still working</div>
               </div>
               <div className="flex-[6_6_0%]">
                 <h3 className="text-2xl underline">
@@ -42,6 +43,7 @@ export default function Exp() {
                 <a
                   href={"https://weblance.pl"}
                   target="_blank"
+                  rel="noreferrer"
                   className={"flex items-center gap-2 text-2xl"}
                 >
                   <img
@@ -51,7 +53,7 @@ export default function Exp() {
                   />
                   Weblance
                 </a>
-                <div className={"text-lg"}>12.2022 – 01.2023</div>
+                <div className={"text-lg"}>12.2022 &ndash; 01.2023</div>
               </div>
               <div className="flex-[6_6_0%]">
                 <h3 className="text-2xl underline">
@@ -60,8 +62,8 @@ export default function Exp() {
                 <p className="text-justify">
                   The internship included working on building two websites with
                   Wordpress, learning the basics of React.js and Node.js to
-                  start working on the company's CRM system, as well as working
-                  on the system itself.
+                  start working on the company&apos;s CRM system, as well as
+                  working on the system itself.
                 </p>
               </div>
             </div>

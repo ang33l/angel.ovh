@@ -1,6 +1,6 @@
 import Wrapper from "../boxes/wrapper";
 import { useRef, useState, useEffect } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   //nav transparency

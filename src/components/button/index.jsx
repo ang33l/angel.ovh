@@ -1,11 +1,12 @@
 import { Link } from "react-scroll/modules";
+import PropTypes from "prop-types";
 
-export default function Button({
+const Button = ({
   variant = "primary",
   children,
   type = "button",
   to = "#",
-}) {
+}) => {
   const variants = {
     primary: "bg-primary text-text hover:bg-secondary transition-colors",
     secondary: "bg-secondary text-text hover:bg-primary transition-colors",
@@ -36,4 +37,13 @@ export default function Button({
       </button>
     );
   }
-}
+};
+
+Button.propTypes = {
+  variant: PropTypes.string,
+  children: PropTypes.any,
+  type: PropTypes.string,
+  to: PropTypes.string,
+};
+
+export default Button;

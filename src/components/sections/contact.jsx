@@ -17,6 +17,7 @@ export default function Contact() {
           <a
             href="https://github.com/ang33l"
             target="_blank"
+            rel="noreferrer"
             className="p-3 border border-background flex flex-col items-center"
           >
             <FaGithub className="text-7xl" />
@@ -25,6 +26,7 @@ export default function Contact() {
           <a
             href="https://www.linkedin.com/in/aleksander-marek-pl/"
             target="_blank"
+            rel="noreferrer"
             className="p-3 border border-background flex flex-col items-center"
           >
             <FaLinkedin className="text-7xl" />

@@ -12,6 +12,7 @@ export default function Projects() {
             <a
               href="https://github.com/ang33l/pkp"
               target="_blank"
+              rel="noreferrer"
               className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
             >
               <div className="flex-[4_4_0%]">
@@ -27,8 +28,8 @@ export default function Projects() {
                   PKP Online (PHP + CodeIgniter)
                 </h3>
                 <p className="text-lg text-justify">
-                  App created for 'Databases' classes. Trains and tickets
-                  managment.
+                  App created for &apos;Databases&apos; classes. Trains and
+                  tickets managment.
                 </p>
               </div>
               <GoLinkExternal className="flex-1 self-center" />
@@ -36,6 +37,7 @@ export default function Projects() {
             <a
               href="https://github.com/ang33l/CCTV_Online"
               target="_blank"
+              rel="noreferrer"
               className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
             >
               <div className="flex-[4_4_0%] flex items-center justify-center text-8xl">
@@ -47,8 +49,8 @@ export default function Projects() {
                 </h3>
                 <p className="text-lg text-justify">
                   Web application made for remote managment of Raspberry
-                  Picamera as regular CCTV app. Made for needs of 'Smart
-                  buildings systems' classes. Created with CodeIgniter3 PHP
+                  Picamera as regular CCTV app. Made for needs of &apos;Smart
+                  buildings systems&apos; classes. Created with CodeIgniter3 PHP
                   framework and Python3.
                 </p>
               </div>
@@ -57,6 +59,7 @@ export default function Projects() {
             <a
               href="https://github.com/ang33l/mANSsanger"
               target="_blank"
+              rel="noreferrer"
               className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
             >
               <div className="flex-[4_4_0%]">
@@ -80,6 +83,7 @@ export default function Projects() {
             <a
               href="https://github.com/ang33l/angel.ovh"
               target="_blank"
+              rel="noreferrer"
               className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
             >
               <div className="flex-[4_4_0%]">
@@ -104,6 +108,7 @@ export default function Projects() {
             <a
               href="https://exegir.pl"
               target="_blank"
+              rel="noreferrer"
               className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
             >
               <div className="flex-[4_4_0%]">

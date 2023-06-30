@@ -52,6 +52,7 @@ export default function Footer() {
                 href="https://github.com/ang33l"
                 className={"text-xl underline"}
                 target="_blank"
+                rel="noreferrer"
               >
                 Github
               </a>
@@ -61,6 +62,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/aleksander-marek-pl/"
                 className={"text-xl underline"}
                 target="_blank"
+                rel="noreferrer"
               >
                 LinkedIn
               </a>
@@ -70,6 +72,7 @@ export default function Footer() {
                 href="https://github.com/ang33l"
                 className={"text-xl underline"}
                 target="_blank"
+                rel="noreferrer"
               >
                 Email
               </a>
