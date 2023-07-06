@@ -5,7 +5,7 @@ import { FaLaptopCode } from "react-icons/fa";
 export default function Hero() {
   return (
     <Wrapper id="hero">
-      <div className={"px-5 py-24 flex min-h-[100dvh]"}>
+      <div className={"px-5 py-24 flex flex-col lg:flex-row min-h-[100dvh]"}>
         <div className={"flex-1 flex flex-col justify-center gap-8"}>
           <h1 className={"text-4xl font-bold text-center"}>
             Aleksander Marek /{" "}

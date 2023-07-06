@@ -1,12 +1,16 @@
 import Wrapper from "../boxes/wrapper";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-scroll";
-
+import Button from "../button";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { MdOutlineCancel } from "react-icons/md";
 export default function Navbar() {
   //nav transparency
   const [val, setVal] = useState(0);
   const [padding, setPadding] = useState(20);
-
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuToggler, setMenuToggler] = useState(false);
+  const [leftIndex, setLeftIndex] = useState(1);
   const handleScroll = () => {
     const position = window.pageYOffset;
     if (position < 255) {
@@ -64,6 +68,41 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleActiveLink);
     };
   }, []);
+
+  const toggleMenu = () => {
+    const width = window.innerWidth;
+    const animationDuration = 300;
+    const animationSteps = 30;
+    const stepValue = width / animationSteps;
+    const delay = animationDuration / animationSteps;
+    let currentStep = 0;
+    let intervalId = null;
+
+    if (menuVisible) {
+      intervalId = setInterval(() => {
+        if (width - stepValue * currentStep >= 0) {
+          const newLeftIndex = width - stepValue * currentStep;
+          setLeftIndex(newLeftIndex);
+          currentStep++;
+        } else {
+          clearInterval(intervalId);
+          setMenuVisible(false);
+        }
+      }, delay);
+    } else {
+      intervalId = setInterval(() => {
+        if (stepValue * currentStep <= width) {
+          const newLeftIndex = stepValue * currentStep;
+          setLeftIndex(newLeftIndex);
+          currentStep++;
+        } else {
+          clearInterval(intervalId);
+          setMenuVisible(true);
+        }
+      }, delay);
+    }
+  };
+
   return (
     <Wrapper
       className={`z-10 fixed`}
@@ -81,7 +120,70 @@ export default function Navbar() {
           >
             <a href="/">./ANGEL</a>
           </div>
-          <div className={"text-3xl flex gap-10 text-text"}>
+          <div className="flex lg:hidden">
+            <Button variant="secondary" onClick={toggleMenu}>
+              <HiOutlineMenuAlt3 />
+            </Button>
+          </div>
+          <div
+            style={{ left: leftIndex }}
+            className="absolute lg:hidden min-h-[100dvh] min-w-[100dvw] text-6xl items-center justify-center bg-secondary top-0 flex flex-col transition-opacity "
+          >
+            <h2 className=" text-8xl mb-10">Menu</h2>
+            <Link
+              to="hero"
+              smooth={true}
+              className={
+                activeSection === "hero" ? "text-primary font-semibold" : ""
+              }
+            >
+              Home
+            </Link>
+            <Link
+              to="about"
+              smooth={true}
+              className={
+                activeSection === "about" ? "text-primary font-semibold" : ""
+              }
+            >
+              About me
+            </Link>
+            <Link
+              to="exp"
+              smooth={true}
+              className={
+                activeSection === "exp" ? "text-primary font-semibold" : ""
+              }
+            >
+              Experience
+            </Link>
+            <Link
+              to="projects"
+              smooth={true}
+              className={
+                activeSection === "projects" ? "text-primary font-semibold" : ""
+              }
+            >
+              Projects
+            </Link>
+            <Link
+              to="contact"
+              smooth={true}
+              className={
+                activeSection === "contact" ? "text-primary font-semibold" : ""
+              }
+            >
+              Contact
+            </Link>
+            <Button
+              className={"mt-10 text-7xl"}
+              variant="secondary"
+              onClick={toggleMenu}
+            >
+              <MdOutlineCancel />
+            </Button>
+          </div>
+          <div className={"hidden text-3xl lg:flex gap-10 text-text"}>
             <Link
               to="hero"
               smooth={true}

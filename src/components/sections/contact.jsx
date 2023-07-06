@@ -6,7 +6,7 @@ export default function Contact() {
     <Wrapper id="contact">
       <div className={"px-5 py-10"}>
         <h2 className={"text-3xl pb-10"}>Contact with me</h2>
-        <div className="flex gap-2 justify-center">
+        <div className="flex flex-col md:flex-row gap-2 justify-center">
           <a
             href="mailto:contact@angel.ovh"
             className="p-3 border border-background flex flex-col items-center"

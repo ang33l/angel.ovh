@@ -8,7 +8,9 @@ export default function Exp() {
         <div className={"flex flex-col items-center justify-center "}>
           <div className="max-w-[900px] gap-10 flex flex-col">
             <div
-              className={"flex gap-5 p-4 hover:bg-hoverDark transition-colors "}
+              className={
+                "flex flex-col md:flex-row items-center md:items-start gap-5 p-4 hover:bg-hoverDark transition-colors "
+              }
             >
               <div className="flex-[2_2_0%]">
                 <a
@@ -37,7 +39,9 @@ export default function Exp() {
               </div>
             </div>
             <div
-              className={"flex gap-5 p-4 hover:bg-hoverDark transition-colors "}
+              className={
+                "flex  flex-col md:flex-row items-center md:items-start  gap-5 p-4 hover:bg-hoverDark transition-colors "
+              }
             >
               <div className="flex-[2_2_0%]">
                 <a

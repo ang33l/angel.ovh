@@ -12,14 +12,18 @@ export default function About() {
       <div className={"px-5 py-10"}>
         <h2 className={"text-3xl pb-10"}>Few words about me...</h2>
 
-        <div className={"flex gap-10 justify-between text-center"}>
+        <div
+          className={
+            "flex flex-col lg:flex-row gap-10 justify-between text-center"
+          }
+        >
           <div className={"flex-1"}>
             <h3 className={"text-2xl border-b-2 border-primary pb-2"}>
               Education
             </h3>
             <div
               className={
-                "flex gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex gap-2 p-4 justify-center lg:justify-start items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <div
@@ -33,7 +37,7 @@ export default function About() {
             </div>
             <div
               className={
-                "flex gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex gap-2 p-4 justify-center lg:justify-start items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <div
@@ -47,7 +51,7 @@ export default function About() {
             </div>
             <div
               className={
-                "flex gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex gap-2 p-4 justify-center lg:justify-start items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <div
@@ -148,7 +152,7 @@ export default function About() {
             </h3>
             <div
               className={
-                "flex justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex justify-center lg:justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <p>Variously swimming</p>
@@ -162,7 +166,7 @@ export default function About() {
             </div>
             <div
               className={
-                "flex justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex justify-center lg:justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <p>Mountain biking</p>
@@ -176,7 +180,7 @@ export default function About() {
             </div>
             <div
               className={
-                "flex justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex justify-center lg:justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <p>Skiing</p>
@@ -190,7 +194,7 @@ export default function About() {
             </div>
             <div
               className={
-                "flex justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
+                "flex justify-center lg:justify-end gap-2 p-4 items-center text-lg hover:bg-hover transition-colors"
               }
             >
               <p>IT</p>
