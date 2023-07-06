@@ -13,7 +13,6 @@ const Button = ({
     primary: "bg-primary text-text hover:bg-secondary transition-colors",
     secondary: "bg-secondary text-text hover:bg-primary transition-colors",
   };
-  console.log(className);
   if (type === "link") {
     return (
       <Link
@@ -48,6 +47,8 @@ Button.propTypes = {
   children: PropTypes.any,
   type: PropTypes.string,
   to: PropTypes.string,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;

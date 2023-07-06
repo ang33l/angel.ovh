@@ -9,8 +9,7 @@ export default function Navbar() {
   const [val, setVal] = useState(0);
   const [padding, setPadding] = useState(20);
   const [menuVisible, setMenuVisible] = useState(false);
-  const [menuToggler, setMenuToggler] = useState(false);
-  const [leftIndex, setLeftIndex] = useState(1);
+  const [leftIndex, setLeftIndex] = useState(window.innerWidth);
   const handleScroll = () => {
     const position = window.pageYOffset;
     if (position < 255) {
@@ -77,8 +76,9 @@ export default function Navbar() {
     const delay = animationDuration / animationSteps;
     let currentStep = 0;
     let intervalId = null;
-
-    if (menuVisible) {
+    console.log(menuVisible);
+    if (!menuVisible) {
+      setMenuVisible(true);
       intervalId = setInterval(() => {
         if (width - stepValue * currentStep >= 0) {
           const newLeftIndex = width - stepValue * currentStep;
@@ -86,7 +86,6 @@ export default function Navbar() {
           currentStep++;
         } else {
           clearInterval(intervalId);
-          setMenuVisible(false);
         }
       }, delay);
     } else {
@@ -97,7 +96,7 @@ export default function Navbar() {
           currentStep++;
         } else {
           clearInterval(intervalId);
-          setMenuVisible(true);
+          setMenuVisible(false);
         }
       }, delay);
     }
@@ -126,8 +125,12 @@ export default function Navbar() {
             </Button>
           </div>
           <div
-            style={{ left: leftIndex }}
-            className="absolute lg:hidden min-h-[100dvh] min-w-[100dvw] text-6xl items-center justify-center bg-secondary top-0 flex flex-col transition-opacity "
+            style={
+              menuVisible
+                ? { display: "flex", left: leftIndex }
+                : { display: "none", left: leftIndex }
+            }
+            className="absolute lg:hidden min-h-[100dvh] min-w-[100dvw] text-6xl items-center justify-center bg-secondary top-0 flex-col transition-opacity "
           >
             <h2 className=" text-8xl mb-10">Menu</h2>
             <Link
