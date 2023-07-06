@@ -139,6 +139,7 @@ export default function Navbar() {
               className={
                 activeSection === "hero" ? "text-primary font-semibold" : ""
               }
+              onClick={toggleMenu}
             >
               Home
             </Link>
@@ -148,6 +149,7 @@ export default function Navbar() {
               className={
                 activeSection === "about" ? "text-primary font-semibold" : ""
               }
+              onClick={toggleMenu}
             >
               About me
             </Link>
@@ -157,6 +159,7 @@ export default function Navbar() {
               className={
                 activeSection === "exp" ? "text-primary font-semibold" : ""
               }
+              onClick={toggleMenu}
             >
               Experience
             </Link>
@@ -166,6 +169,7 @@ export default function Navbar() {
               className={
                 activeSection === "projects" ? "text-primary font-semibold" : ""
               }
+              onClick={toggleMenu}
             >
               Projects
             </Link>
@@ -175,6 +179,7 @@ export default function Navbar() {
               className={
                 activeSection === "contact" ? "text-primary font-semibold" : ""
               }
+              onClick={toggleMenu}
             >
               Contact
             </Link>

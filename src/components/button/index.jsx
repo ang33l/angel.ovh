@@ -10,8 +10,10 @@ const Button = ({
   onClick = () => {},
 }) => {
   const variants = {
-    primary: "bg-primary text-text hover:bg-secondary transition-colors",
-    secondary: "bg-secondary text-text hover:bg-primary transition-colors",
+    primary:
+      "bg-primary text-text hover:bg-secondary transition-colors text-center",
+    secondary:
+      "bg-secondary text-text hover:bg-primary transition-colors  text-center",
   };
   if (type === "link") {
     return (
@@ -23,6 +25,7 @@ const Button = ({
          transition-all duration-200 
          hover:transition-all hover:duration-200
          hover:scale-105  `}
+        onClick={onClick}
       >
         {children}
       </Link>
