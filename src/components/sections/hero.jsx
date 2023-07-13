@@ -1,6 +1,7 @@
 import Wrapper from "../boxes/wrapper";
 import Button from "../button";
-import { FaLaptopCode } from "react-icons/fa";
+import Lottie from "lottie-react";
+import animationData from "../../assets/animation_hero.json";
 
 export default function Hero() {
   return (
@@ -24,11 +25,7 @@ export default function Hero() {
           </div>
         </div>
         <div className={"flex-1 flex items-center justify-center"}>
-          <FaLaptopCode
-            className={
-              "text-primary text-[25rem] hover:skew-y-3 transition-transform"
-            }
-          />
+          <Lottie animationData={animationData} />
         </div>
       </div>
     </Wrapper>
