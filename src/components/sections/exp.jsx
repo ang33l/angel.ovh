@@ -4,7 +4,7 @@ export default function Exp() {
   return (
     <Wrapper id={"exp"}>
       <div className={"px-5 py-10"}>
-        <h2 className={"text-3xl pb-10"}>My experience</h2>
+        <h2 className={"text-3xl pb-10"}>My commercial experience</h2>
         <div className={"flex flex-col items-center justify-center "}>
           <div className="max-w-[900px] gap-10 flex flex-col">
             <div
@@ -26,7 +26,7 @@ export default function Exp() {
                   />
                   Weblance
                 </a>
-                <div className={"text-lg"}>05.2023 &ndash; still working</div>
+                <div className={"text-lg"}>05.2023 &ndash; 07.2023</div>
               </div>
               <div className="flex-[6_6_0%]">
                 <h3 className="text-2xl underline">
