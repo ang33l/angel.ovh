@@ -10,6 +10,31 @@ export default function Projects() {
         <div className={"flex flex-col items-center justify-center "}>
           <div className="max-w-[900px] gap-10 flex flex-col">
             <a
+              href="https://github.com/ang33l/online-songbook"
+              target="_blank"
+              rel="noreferrer"
+              className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
+            >
+              <div className="flex-[4_4_0%]">
+                <img
+                  className="object-cover"
+                  src="/online-songbook.png"
+                  alt="songbook image"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex-[12_12_0%]">
+                <h3 className="text-2xl underline">
+                  Online songbook (Next.js, Shadcn, Convex)
+                </h3>
+                <p className="text-lg text-justify">
+                  App created for personal needs. It&apos;s a songbook with
+                  adding and managing system.
+                </p>
+              </div>
+              <GoLinkExternal className="flex-1 self-center" />
+            </a>
+            <a
               href="https://github.com/ang33l/pkp"
               target="_blank"
               rel="noreferrer"
