@@ -158,7 +158,7 @@ export default function Projects() {
               <GoLinkExternal className="flex-1 self-center" />
             </a>
             <a
-              href="https://exegir.pl"
+              href="https://exegir.vercel.app"
               target="_blank"
               rel="noreferrer"
               className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
