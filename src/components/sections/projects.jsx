@@ -35,6 +35,33 @@ export default function Projects() {
               <GoLinkExternal className="flex-1 self-center" />
             </a>
             <a
+              href="https://github.com/ang33l/cyfrowa-ksiega-gosci"
+              target="_blank"
+              rel="noreferrer"
+              className={"flex gap-5 p-4 hover:bg-hover transition-colors "}
+            >
+              <div className="flex-[4_4_0%]">
+                <img
+                  className="object-cover"
+                  src="/ckg.jpg"
+                  alt="ckg image"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex-[12_12_0%]">
+                <h3 className="text-2xl underline">
+                  Digital guestbook (Next.js, Convex)
+                </h3>
+                <p className="text-lg text-justify">
+                  App created for engineering thesis. It's complex aplication
+                  with db, file storage, auth system for 3 independent user
+                  types: guest, admin and employee. Every of them have different
+                  functionalities.
+                </p>
+              </div>
+              <GoLinkExternal className="flex-1 self-center" />
+            </a>
+            <a
               href="https://github.com/ang33l/pkp"
               target="_blank"
               rel="noreferrer"
