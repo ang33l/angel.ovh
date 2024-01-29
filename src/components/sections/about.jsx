@@ -31,42 +31,23 @@ export default function About() {
                   "w-[60px] h-[60px] bg-date text-text p-2 rounded-[30px] flex items-center justify-center text-xl"
                 }
               >
+                2024
+              </div>
+              <p>End of IT college</p>
+            </div>
+            <div
+              className={
+                "flex gap-2 p-4 justify-center lg:justify-start items-center text-lg hover:bg-hover transition-colors"
+              }
+            >
+              <div
+                className={
+                  "w-[60px] h-[60px] bg-date text-text p-2 rounded-[30px] flex items-center justify-center text-xl"
+                }
+              >
                 2020
               </div>
               <p>Completion of an IT technical school</p>
-            </div>
-            <div
-              className={
-                "flex gap-2 p-4 justify-center lg:justify-start items-center text-lg hover:bg-hover transition-colors"
-              }
-            >
-              <div
-                className={
-                  "w-[60px] h-[60px] bg-date text-text p-2 rounded-[30px] flex items-center justify-center text-xl"
-                }
-              >
-                2020
-              </div>
-              <p>Start of IT college</p>
-            </div>
-            <div
-              className={
-                "flex gap-2 p-4 justify-center lg:justify-start items-center text-lg hover:bg-hover transition-colors"
-              }
-            >
-              <div
-                className={
-                  "w-[60px] h-[60px] bg-date text-text p-2 rounded-[30px] flex items-center justify-center text-xl"
-                }
-              >
-                2024
-              </div>
-              <p>
-                End of IT college{" "}
-                <span className={" px-1 bg-green rounded-md text-text"}>
-                  soon
-                </span>
-              </p>
             </div>
           </div>
           <div className={"flex-1"}>
