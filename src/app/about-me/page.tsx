@@ -7,14 +7,14 @@ export default function Page() {
     return <BlurFade className="w-full">
         <MainContainer>
             <Title>Few words about me</Title>
-            <div className="flex gap-8 items-center justify-center">
+            <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
                 <div className="p-8 relative">
-                    <div className="relative w-64 h-64">
+                    <div className="relative w-32 h-32 lg:w-64 lg:h-64">
                         <Image src="/me.jpg" fill={true} objectFit="cover" className="rounded-[50%] opacity-80" alt="Me" />
                     </div>
                     <div className="absolute inset-0 w-full h-full border-r-2 border-b-2 rounded-[50%] border-primary"></div>
                 </div>
-                <div className="text-4xl">
+                <div className=" text-2xl lg:text-4xl">
                     <p>Hi, I am Aleksander Marek 👋</p>
                     <p className="italic">Full-stack developer</p>
                 </div>

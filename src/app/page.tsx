@@ -85,12 +85,12 @@ export default function Page() {
       </p>
       <div className="relative flex flex-col gap-4 pl-6 before:absolute before:top-0 before:left-2 before:w-[1px] before:h-full before:bg-slate-500">
         {COMMERCIAL_EXP.map((exp) => (
-          <div key={exp.start_date} className="relative border border-slate-800/50 rounded-md p-2 flex before:absolute before:top-6 before:left-[-23px] before:w-3 before:h-3 before:z-10 before:rounded-[50%] before:bg-primary after:absolute after:top-[calc(1.5rem+6px)] after:left-[-22px] after:w-[22px] after:h-[1px] after:bg-slate-800/50">
-            <div className="border-r border-slate-800/50 pr-4">
+          <div key={exp.start_date} className="relative border border-slate-800/50 rounded-md p-2 flex flex-col lg:flex-row before:absolute before:top-6 before:left-[-23px] before:w-3 before:h-3 before:z-10 before:rounded-[50%] before:bg-primary after:absolute after:top-[calc(1.5rem+6px)] after:left-[-22px] after:w-[22px] after:h-[1px] after:bg-slate-800/50">
+            <div className="border-b lg:border-r lg:border-b-0 pb-2 lg:pb-0 border-slate-800/50 lg:pr-4">
               <Link href={exp.company_url} target="_blank" className="flex gap-1">{exp.company} <ExternalLink className="w-3 h-3" /></Link>
               <p className="text-sm text-slate-400">{exp.start_date} - {exp.end_date ?? "Present"}</p>
             </div>
-            <div className="pl-4">
+            <div className="pt-2 lg:pt-0 lg:pl-4">
               <p><span className="font-semibold text-lg">{exp.position}</span> <span className="text-slate-400 text-sm">({exp.additional_info})</span></p>
               <p className="text-slate-400 mt-4 italic text-sm">About the job</p>
               <ul className="list-disc ml-5">

@@ -1,11 +1,12 @@
 "use client"
-import { BriefcaseBusiness, FolderOpenDot, GraduationCap, Home, Linkedin, PhoneCall, Settings, User, User2 } from 'lucide-react';
+import { BriefcaseBusiness, FolderOpenDot, GraduationCap, MenuIcon, User2 } from 'lucide-react';
 import AnimatedBackground from '@/components/core/animated-background';
 import Link from 'next/link';
 import BlurFade from '../magicui/blur-fade';
 import { usePathname } from 'next/navigation';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { useState } from 'react';
 
 export default function Navigation() {
     const TABS = [
@@ -31,15 +32,27 @@ export default function Navigation() {
         },
     ];
     const pathname = usePathname();
+    const [menuToggle, setMenuToggle] = useState(false);
     return (
         <BlurFade>
             <div className='sticky top-4 flex flex-col gap-4'>
                 <Link className='font-serif group' href="/">
-                    <h3 className='text-white text-4xl group-hover:text-primary transition-colors text-nowrap'>Aleksander Marek</h3>
+                    <h3 className='text-white text-4xl group-hover:text-primary text-center transition-colors text-nowrap'>Aleksander Marek</h3>
                     <h4 className='text-primary font-semibold group-hover:text-white text-xl text-center transition-colors  text-nowrap'>Full-stack developer</h4>
                 </Link>
-                <div className='flex flex-col rounded-xl p-2 custom-blur'>
-                    <span className='text-center mb-4 text-sm text-slate-300 font-semibold'>Navigation</span>
+                <div className='flex flex-col rounded-xl p-2 custom-blur lg:!h-full overflow-hidden transition-all duration-300'
+
+                    style={{
+                        height: menuToggle ? '24.5rem' : '2.5rem',
+                    }}>
+                    <button className='text-center mb-4 text-sm text-slate-300 font-semibold flex gap-2 justify-center items-center lg:hidden'
+                        onClick={() => setMenuToggle(!menuToggle)}>
+                        <MenuIcon className='h-5 w-5 inline-block lg:hidden' />
+                        Navigation
+                    </button>
+                    <span className='text-center mb-4 text-sm text-slate-300 font-semibold gap-2 justify-center items-center hidden lg:flex'>
+                        Navigation
+                    </span>
                     <AnimatedBackground
                         defaultValue={TABS.find((tab) => tab.href === pathname)?.label}
                         className='rounded-[4px] bg-primary'

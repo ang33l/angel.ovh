@@ -73,8 +73,8 @@ export default function Page() {
                     <Link href={project.url} key={project.name} target="_blank" className="group flex flex-col gap-2 p-4  border border-slate-800/50 rounded-md">
                         <h3 className="text-lg font-semibold">{project.name}</h3>
 
-                        <div className="flex gap-8">
-                            <div className="relative w-64 h-32 flex-1 flex items-center justify-center">
+                        <div className="flex flex-col lg:flex-row gap-8">
+                            <div className="relative w-full h-32 lg:w-64 lg:flex-1 flex items-center justify-center">
                                 <div className="opacity-0 group-hover:opacity-100 flex gap-1 absolute rounded-xl w-full h-full inset-0 z-10 items-center justify-center bg-slate-900/80 transition-all text-slate-200 font-semibold text-center">
                                     {project.visit_text ?? <>Visit website  <ExternalLink className="w-3 h-3" /></>}
                                 </div>
