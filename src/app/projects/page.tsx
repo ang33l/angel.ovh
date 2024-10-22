@@ -78,7 +78,7 @@ const CATEGORIES = ["All", ...PROJECTS.reduce((acc, project) => {
     return acc;
 }, [] as string[])]
 
-export default function Component() {
+function PageContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const currentCategory = searchParams.get('category') || 'All'
@@ -98,73 +98,79 @@ export default function Component() {
         : PROJECTS.filter(project => project.category === currentCategory)
 
     return (
-        <Suspense>
-            <BlurFade className="w-full">
-                <MainContainer>
-                    <Title>Public projects I have implemented</Title>
-                    <p className="text-slate-400 mb-4 italic text-justify">
-                        After many years of enjoying programming, I have done a lot of projects.
-                        My first real project was automated bot for TeamSpeak3 server.
-                        It was written in PHP and it was able to manage various things on the server,
-                        unfortunately I don&apos;t have access to the code anymore.
-                    </p>
-                    <p className="text-slate-100 mb-4 italic text-justify">Categories:</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                        {CATEGORIES.map((category) => (
-                            <Button
-                                key={category}
-                                className={currentCategory === category ? "bg-primary text-zinc-950" : "bg-transparent text-white border-slate-800"}
-                                variant={currentCategory === category ? "default" : "outline"}
-                                onClick={() => handleCategoryChange(category)}
+        <BlurFade className="w-full">
+            <MainContainer>
+                <Title>Public projects I have implemented</Title>
+                <p className="text-slate-400 mb-4 italic text-justify">
+                    After many years of enjoying programming, I have done a lot of projects.
+                    My first real project was automated bot for TeamSpeak3 server.
+                    It was written in PHP and it was able to manage various things on the server,
+                    unfortunately I don&apos;t have access to the code anymore.
+                </p>
+                <p className="text-slate-100 mb-4 italic text-justify">Categories:</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {CATEGORIES.map((category) => (
+                        <Button
+                            key={category}
+                            className={currentCategory === category ? "bg-primary text-zinc-950" : "bg-transparent text-white border-slate-800"}
+                            variant={currentCategory === category ? "default" : "outline"}
+                            onClick={() => handleCategoryChange(category)}
+                        >
+                            {category}
+                        </Button>
+                    ))}
+                </div>
+                <motion.div
+                    className="flex flex-col gap-4"
+                    layout
+                >
+                    <AnimatePresence>
+                        {filteredProjects.map((project) => (
+                            <motion.div
+                                key={project.name}
+                                layout
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ scale: 0, opacity: 0, }}
+                                transition={{ duration: 0.3 }}
                             >
-                                {category}
-                            </Button>
-                        ))}
-                    </div>
-                    <motion.div
-                        className="flex flex-col gap-4"
-                        layout
-                    >
-                        <AnimatePresence>
-                            {filteredProjects.map((project) => (
-                                <motion.div
-                                    key={project.name}
-                                    layout
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ scale: 0, opacity: 0, }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <Link href={project.url} target="_blank" className="group flex flex-col gap-2 p-4 border border-slate-800/50 rounded-md">
-                                        <h3 className="text-lg font-semibold">{project.name}</h3>
-                                        <div className="flex flex-col lg:flex-row gap-8">
-                                            <div className="relative w-full h-32 lg:w-64 lg:flex-1 flex items-center justify-center">
-                                                <div className="opacity-0 group-hover:opacity-100 flex gap-1 absolute rounded-xl w-full h-full inset-0 z-10 items-center justify-center bg-slate-900/80 transition-all text-slate-200 font-semibold text-center">
-                                                    {project.visit_text ?? <>Visit website  <ExternalLink className="w-3 h-3" /></>}
-                                                </div>
-                                                {project.image_src ? (
-                                                    <Image src={project.image_src} alt={project.name} fill={true} objectFit="contain" className="rounded-xl" />
-                                                ) : (
-                                                    <ImageOff className="w-24 h-24" />
-                                                )}
+                                <Link href={project.url} target="_blank" className="group flex flex-col gap-2 p-4 border border-slate-800/50 rounded-md">
+                                    <h3 className="text-lg font-semibold">{project.name}</h3>
+                                    <div className="flex flex-col lg:flex-row gap-8">
+                                        <div className="relative w-full h-32 lg:w-64 lg:flex-1 flex items-center justify-center">
+                                            <div className="opacity-0 group-hover:opacity-100 flex gap-1 absolute rounded-xl w-full h-full inset-0 z-10 items-center justify-center bg-slate-900/80 transition-all text-slate-200 font-semibold text-center">
+                                                {project.visit_text ?? <>Visit website  <ExternalLink className="w-3 h-3" /></>}
                                             </div>
-                                            <div className="flex-[4]">
-                                                <p className="text-slate-400 text-sm italic">About the project</p>
-                                                <p>{project.description}</p>
-                                                <p className="text-slate-400 text-sm italic mt-4">Stack</p>
-                                                <div className="flex flex-wrap gap-2 text-sm">
-                                                    {project.technologies.map((tech) => (
-                                                        <span key={tech} className="bg-primary/20 px-1 py-0.5 rounded-md">{tech}</span>
-                                                    ))}
-                                                </div>
+                                            {project.image_src ? (
+                                                <Image src={project.image_src} alt={project.name} fill={true} objectFit="contain" className="rounded-xl" />
+                                            ) : (
+                                                <ImageOff className="w-24 h-24" />
+                                            )}
+                                        </div>
+                                        <div className="flex-[4]">
+                                            <p className="text-slate-400 text-sm italic">About the project</p>
+                                            <p>{project.description}</p>
+                                            <p className="text-slate-400 text-sm italic mt-4">Stack</p>
+                                            <div className="flex flex-wrap gap-2 text-sm">
+                                                {project.technologies.map((tech) => (
+                                                    <span key={tech} className="bg-primary/20 px-1 py-0.5 rounded-md">{tech}</span>
+                                                ))}
                                             </div>
                                         </div>
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
-                </MainContainer>
-            </BlurFade>
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
+            </MainContainer>
+        </BlurFade>
+    )
+}
+
+export default function ProjectsPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PageContent />
         </Suspense>
     )
 }
