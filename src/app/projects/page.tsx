@@ -70,7 +70,12 @@ const PROJECTS = [
     }
 ]
 
-const CATEGORIES = ["All", ...new Set(PROJECTS.map(project => project.category))]
+const CATEGORIES = ["All", ...PROJECTS.reduce((acc, project) => {
+    if (!acc.includes(project.category)) {
+        acc.push(project.category);
+    }
+    return acc;
+}, [] as string[])]
 
 export default function Component() {
     const router = useRouter()
